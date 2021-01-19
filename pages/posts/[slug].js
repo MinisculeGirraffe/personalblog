@@ -58,7 +58,6 @@ export async function getStaticProps({ params }) {
     'ogImage',
     'coverImage',
   ])
-  console.log(post.content)
   return {
     props: {
       post: post

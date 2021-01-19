@@ -29,7 +29,7 @@ If the names were any giveaway, `Invoke-RestMethod` is explicitly tailored for i
 Let’s explore this interactively using a few RESTful services. For getting our favorite Kanye West quotes, [api.kanye.rest](). And for bringing our favorite cat facts [catfact.ninja](). 
 
 When running an  `Invoke-RestMethod` to api.kanye.rest, We receive an object, with one property “quote” with the value of our generated quote. 
-```Powershell
+```powershell
 Invoke-RestMethod api.kanye.rest
 <#
 >	quote
@@ -39,7 +39,7 @@ Invoke-RestMethod api.kanye.rest
 ```
 
 If we use the range operator to run that 5 times through `Foreach-Object`, we get 5 quotes back, formatted as expected in our terminal
-```Powershell
+```powershell
 1..5 | ForEach-Object {Invoke-RestMethod api.kanye.rest }
 <#
 >	quote
@@ -54,7 +54,7 @@ If we use the range operator to run that 5 times through `Foreach-Object`, we ge
 ```
 
 I’m not even going to try and format the output of `Invoke-Webrequest` because it’s a detailed report of an HTTP request containing the raw JSON that was sent over, our HTTP headers, status code. Things we don’t care about if we’re trying to get our sweet Kanye quotes. Run the code below to see what I’m talking about.
-```Powershell
+```powershell
 Invoke-WebRequest api.kanye.rest
 ```
 
@@ -70,7 +70,7 @@ Invoke-RestMethod has additional functionalities like automatically formatting o
 		- maxLength: maximum number of characters of a fact.
 
 We can declare limit and maxLength in a [hashtable][7] and then pass it into Invoke-WebRequest to be encoded for the proper REST method we’re using. 
-```Powershell
+```powershell
 $params = @{
     limit = 1
     maxLength = 1000
@@ -85,7 +85,7 @@ Invoke-RestMethod -Uri "catfact.ninja/facts" `
 ```
 
 To break down all the abstractions that have taken place, I’ve written out the same code but using `Invoke-WebRequest`. 
-```Powershell
+```powershell
 $url = "https://catfact.ninja/facts"
 $params = @{
     limit = 1
@@ -104,7 +104,7 @@ $results = $results.Content | ConvertFrom-Json
 ```
 
 Regardless of how we got to our data being returned, whether with high-level abstractions using `Invoke-RestMethod` or lower-level `Invoke-WebRequest,` We need to display our cat facts in an easy-to-read format.
-```Powershell
+```powershell
 <#
 >	current_page   : 1
 	data           : {@{fact=A cat’s brain is biologically more similar to a human brain than it is to a dog’s. Both humans and cats have identical regions in their brains that are responsible 
@@ -126,7 +126,7 @@ When working with REST, the most valuable skill you can have is understanding ho
 
 If we wrap our code in a function, we can return the “fact” properties under the “data” array, along with adding for easy intractability with function parameters.
 
-```Powershell
+```powershell
 function Get-CatFact {
     param (
         #Type validation & default values.
