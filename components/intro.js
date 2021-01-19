@@ -1,21 +1,39 @@
-import { CMS_NAME } from '../lib/constants'
-
+import { config } from '../siteConfig'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
+import Link from 'next/link'
 export default function Intro() {
   return (
-    <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12">
-      <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8">
-        Blog.
-      </h1>
-      <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
-        A statically generated blog example using{' '}
-        <a
-          href="https://nextjs.org/"
-          className="underline hover:text-success duration-200 transition-colors"
-        >
-          Next.js
-        </a>{' '}
-        and {CMS_NAME}.
-      </h4>
-    </section>
+    <div className="w-full  bg-color-basic-900">
+
+      <div className="container text-white mx-auto flex flex-row justify-between md:justify-between ">
+        <Link href='/'>
+          <a>
+            <section className="flex-col flex justify-items-center hover:underline">
+              <h1 className="text-2xl md:text-4xl font-bold tracking-tighter leading-tight">
+                {config.blogName}
+              </h1>
+              <h4 className=" text-lg md:pl-8">
+                {config.blogDescription}
+              </h4>
+            </section>
+          </a>
+
+        </Link>
+
+        <span className='flex-row flex items-center space-x-4'>
+          <a className='hover:underline' href='https://twitter.com/minigirraffe'>
+            <FontAwesomeIcon icon={faTwitter} />
+            Twitter
+          </a>
+          <a className='hover:underline' href='https://github.com/MinisculeGirraffe'>
+            <FontAwesomeIcon icon={faGithub} />
+            Github
+          </a>
+        </span>
+      </div>
+    </div>
+
+
   )
 }
