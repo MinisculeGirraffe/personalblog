@@ -1,6 +1,6 @@
 ---
 title: Abusing the Range Operator
-date: 2020-01-13T00:00:00.000Z
+date: '2020-01-13T00:00:00.000Z'
 author:
   name: Daniel Norred
   picture: '/assets/blog/authors/joe.jpeg'
