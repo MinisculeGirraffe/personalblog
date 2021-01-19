@@ -1,10 +1,10 @@
 ---
 title: 'The Emoji Offset'
-excerpt: 'I come up with near fever dream stupid idea’s all the time. This is one of my latest. After preparing a powershell training involving caesar ciphers. In my infinite wisdom I thought it’d be neat to convert text into emoji’s and then back again.  Here’s the one liner.'
+excerpt: 'I come up with near fever dream stupid idea’s all the time. This is one of my latest. After preparing a powershell training involving Caesar ciphers. In my infinite wisdom I thought it’d be neat to convert text into emoji’s and then back again.  Here’s the one-liner.'
 coverImage: '/assets/blog/preview/cover.jpg'
 date: '2020-03-16T05:35:07.322Z'
 author:
-  name: Joe Haddad
+  name: Daniel Norred
   picture: '/assets/blog/authors/joe.jpeg'
 ogImage:
   url: '/assets/blog/preview/cover.jpg'
