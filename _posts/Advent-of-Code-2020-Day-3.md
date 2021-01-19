@@ -1,7 +1,7 @@
 ---
 title: 'Advent of Code 2020: Day 3'
 excerpt: 'Day 3 was my absolute favorite challenge that I’ve done so far, specifically because it’s a very visual solution.'
-date: 20210112T141701-0600
+date: 2020-01-12T00:00:00.000Z
 author:
   name: Daniel Norred
   picture: '/assets/blog/authors/joe.jpeg'

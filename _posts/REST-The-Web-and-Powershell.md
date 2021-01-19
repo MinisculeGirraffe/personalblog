@@ -1,7 +1,7 @@
 ---
 title: REST, The Web and, PowerShell
 excerpt: ' This isn’t a tutorial on everything you need to know about using REST with PowerShell, but more of a practical guide for getting started. If you don’t know anything about REST, interacting with RESTful services through PowerShell can be a daunting task. '
-date: 20210115T153551-0600
+date: 2020-01-15T00:00:00.000Z
 author:
   name: Daniel Norred
   picture: '/assets/blog/authors/joe.jpeg'
