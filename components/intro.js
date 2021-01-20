@@ -1,6 +1,8 @@
 import { config } from '../siteConfig'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faFileArchive } from '@fortawesome/free-regular-svg-icons'
+import HeaderIcon from './header-icon'
 import Link from 'next/link'
 export default function Intro() {
   return (
@@ -9,7 +11,7 @@ export default function Intro() {
       <div className="container text-white mx-auto flex flex-row justify-between md:justify-between ">
         <Link href='/'>
           <a>
-            <section className="flex-col flex justify-items-center hover:underline">
+            <section className="flex-col flex justify-items-center hover:underline rounded ">
               <h1 className="text-2xl md:text-4xl font-bold tracking-tighter leading-tight">
                 {config.blogName}
               </h1>
@@ -22,14 +24,22 @@ export default function Intro() {
         </Link>
 
         <span className='flex-row flex items-center space-x-4'>
-          <a className='hover:underline' href='https://twitter.com/minigirraffe'>
-            <FontAwesomeIcon icon={faTwitter} />
-            Twitter
-          </a>
-          <a className='hover:underline' href='https://github.com/MinisculeGirraffe'>
-            <FontAwesomeIcon icon={faGithub} />
-            Github
-          </a>
+        <HeaderIcon
+          link='/archive'
+          text='Archive'
+          icon='archive'
+       />
+        <HeaderIcon
+          link="https://twitter.com/minigirraffe"
+          text='Twitter'
+          icon={['fab','twitter']}
+        />
+        <HeaderIcon
+          link='https://github.com/MinisculeGirraffe'
+          text='Github'
+          icon={['fab','github']}
+        />
+   
         </span>
       </div>
     </div>
