@@ -6,7 +6,7 @@ export default function Layout({ preview, children }) {
   return (
     <>
       <Meta />
-      <div className="min-h-screen">
+      <div className="flex flex-col h-screen">
         <main>{children}</main>
       </div>
       <Footer />
