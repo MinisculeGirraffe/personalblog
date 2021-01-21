@@ -10,10 +10,11 @@ export default function PostPreview({
   excerpt,
   author,
   slug,
+  readingTime,
 }) {
   return (
     <div>
-      <div className="mb-5">
+      <div className="mb-5 -mx-5 border-b-4  border-color-basic-900 rounded justify-center">
         {coverImage &&
           <CoverImage
             slug={slug}
@@ -23,19 +24,24 @@ export default function PostPreview({
             width={556}
           />
         }
-      </div>
-      <h3 className="text-3xl leading-snug">
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
-          <a className="hover:underline">{title}</a>
-        </Link>
-      </h3>
-      {date &&
-            <div className="text-lg mb-1">
-            <DateFormatter dateString={date} />
-          </div>
-      }
+        <div>
+          <h3 className="text-3xl leading-snug flex flex-row items-center justify-between px-2">
+            <span>
+              <Link as={`/posts/${slug}`} href="/posts/[slug]">
+                <a className="hover:underline">{title}</a>
+              </Link>
+              <p className='text-sm mb-1'>Reading Time: {readingTime} Minutes</p>
+            </span>
+            {date &&
+              <div className="text-lg ml-1 ">
+                <DateFormatter dateString={date} />
+              </div>
+            }
 
-      {excerpt  &&
+          </h3>
+        </div>
+      </div>
+      {excerpt &&
         <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
       }
 
