@@ -6,7 +6,7 @@ import HeaderIcon from './header-icon'
 import Link from 'next/link'
 export default function Intro() {
   return (
-    <div className=" fixed flex w-full bg-color-basic-700 shadow-lg">
+    <div className=" fixed flex w-full bg-color-basic-900 shadow-lg">
 
       <div className="container text-white mx-auto flex flex-row justify-between md:justify-between ">
         <Link href='/'>

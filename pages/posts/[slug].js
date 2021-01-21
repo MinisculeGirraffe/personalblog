@@ -4,13 +4,13 @@ import Container from '../../components/container'
 import PostBody from '../../components/post-body'
 import PostHeader from '../../components/post-header'
 import Layout from '../../components/layout'
-import { getPostBySlug, getAllPosts } from '../../lib/api'
+//import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import Intro from '../../components/intro'
 
 
-
+import {getPosts,getSinglePost} from '../../lib/posts'
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter()
@@ -21,7 +21,6 @@ export default function Post({ post, morePosts, preview }) {
     <Layout preview={preview}>
               <Intro/>
       <Container>
-
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
@@ -31,13 +30,13 @@ export default function Post({ post, morePosts, preview }) {
                 <title>
                   {post.title}
                 </title>
-                <meta property="og:image" content={post.ogImage.url} />
+                <meta property="og:image" content={post.og_image} />
               </Head>
               <PostHeader
                 title={post.title}
-                date={post.date}
+                date={post.published_at}
               />
-           <PostBody content={post.content}/>
+           <PostBody content={post.html}/>
             </article>
           </>
         )}
@@ -46,33 +45,30 @@ export default function Post({ post, morePosts, preview }) {
   )
 }
 
-export async function getStaticProps({ params }) {
-  const post = getPostBySlug(params.slug, [
-    'title',
-    'date',
-    'slug',
-    'author',
-    'content',
-    'ogImage',
-    'coverImage',
-  ])
+// Pass the page slug over to the "getSinglePost" function
+// In turn passing it to the posts.read() to query the Ghost Content API
+export async function getStaticProps(context) {
+  const post = await getSinglePost(context.params.slug)
+  console.log(post)
+  if (!post) {
+    return {
+      notFound: true,
+    }
+  }
+
   return {
-    props: {
-      post: post
-    },
+    props: { post }
   }
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
-  return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: post.slug,
-        },
-      }
-    }),
-    fallback: false,
-  }
+  const posts = await getPosts()
+
+  // Get the paths we want to create based on posts
+  const paths = posts.map((post) => ({
+    params: { slug: post.slug },
+  }))
+
+  // { fallback: false } means posts not found should 404.
+  return { paths, fallback: false }
 }
