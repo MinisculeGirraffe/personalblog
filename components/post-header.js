@@ -16,11 +16,11 @@ export default function PostHeader({ title, coverImage, date, author }) {
 
         <div className="max-w-2xl mx-auto items-center">
           <PostTitle>{title}</PostTitle>
-          {author &&
-            <div className="block md:hidden mb-1 ">
-              <p>{author}</p>
+          
+            <div className="block text-sm  md:hidden mb-1 ">
+              <p>Author: {author}</p>
             </div>
-          }
+          
           <div className="mb-6 text-lg">
             <DateFormatter dateString={date} />
           </div>

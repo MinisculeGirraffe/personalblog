@@ -1,5 +1,6 @@
 
 import DateFormatter from '../components/date-formatter'
+import Tag from '../components/tag'
 import CoverImage from './cover-image'
 import Link from 'next/link'
 
@@ -11,10 +12,11 @@ export default function PostPreview({
   author,
   slug,
   readingTime,
+  tag,
 }) {
   return (
     <div>
-      <div className="mb-5 -mx-5 border-b-4  border-color-basic-900 rounded justify-center">
+      <div className=" pt-2 shadow-md mb-5 -mx-5 border border-color-basic-1100 border-color-basic-900 rounded justify-center">
         {coverImage &&
           <CoverImage
             slug={slug}
@@ -35,6 +37,7 @@ export default function PostPreview({
             {date &&
               <div className="text-lg ml-1 ">
                 <DateFormatter dateString={date} />
+                <p className='text-sm'>Author: {author}</p>
               </div>
             }
 
@@ -44,7 +47,7 @@ export default function PostPreview({
       {excerpt &&
         <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
       }
-
     </div>
   )
 }
+``
