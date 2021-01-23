@@ -4,10 +4,8 @@ import Container from '../../components/container'
 import PostBody from '../../components/post-body'
 import PostHeader from '../../components/post-header'
 import Layout from '../../components/layout'
-//import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
-import Intro from '../../components/intro'
 
 
 import {getPosts,getSinglePost} from '../../lib/posts'
@@ -19,13 +17,13 @@ export default function Post({ post, morePosts, preview }) {
   }
   return (
     <Layout preview={preview}>
-              <Intro/>
+      <div className=' max-w-5xl mx-auto'>
       <Container>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="mb-32">
+            <article className="mb-24">
               <Head>
                 <title>
                   {post.title}
@@ -43,6 +41,7 @@ export default function Post({ post, morePosts, preview }) {
           </>
         )}
       </Container>
+      </div>
     </Layout>
   )
 }

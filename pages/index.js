@@ -1,6 +1,6 @@
 import Container from '../components/container'
 import MoreStories from '../components/more-stories'
-import Intro from '../components/intro'
+
 import Layout from '../components/layout'
 import {getPosts} from '../lib/posts'
 import Head from 'next/head'
@@ -15,7 +15,6 @@ export default function Index({ allPosts }) {
         <Head>
           <title>Daniel's Blog</title>
         </Head>
-        <Intro />
         <Container>
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>

@@ -1,12 +1,9 @@
 import { config } from '../siteConfig'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faFileArchive } from '@fortawesome/free-regular-svg-icons'
 import HeaderIcon from './header-icon'
 import Link from 'next/link'
 export default function Intro() {
   return (
-    <div className=" fixed flex w-full bg-color-basic-900 shadow-lg z-50"> 
+    <div className=" justify-start fixed flex w-full bg-color-basic-900 shadow-lg">
 
       <div className="container text-white mx-auto flex flex-row justify-between md:justify-between ">
         <Link href='/'>

@@ -1,10 +1,12 @@
 import Alert from '../components/alert'
 import Footer from '../components/footer'
 import Meta from '../components/meta'
+import Intro from '../components/intro'
 import prism from 'prismjs'
 import "prismjs/components/prism-jsx.min.js";
 import "prismjs/components/prism-powershell.min.js"
-import {useEffect} from 'react'
+
+import { useEffect } from 'react'
 
 export default function Layout({ preview, children }) {
   useEffect(() => {
@@ -13,8 +15,12 @@ export default function Layout({ preview, children }) {
   return (
     <>
       <Meta />
-      <div className="flex flex-col h-screen">
-        <main>{children}</main>
+      <div className=" flex  min-h-screen bg-color-basic-1100 text-color-basic-200 ">
+        <Intro />
+        <div className='flex-1  w-screen'>
+          <main>{children}</main>
+        </div>
+        
       </div>
       <Footer />
     </>
