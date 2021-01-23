@@ -36,6 +36,7 @@ export default function Post({ post, morePosts, preview }) {
                 title={post.title}
                 date={post.published_at}
                 author={post.primary_author}
+                tags={post.tags}
               />
            <PostBody content={post.html}/>
             </article>

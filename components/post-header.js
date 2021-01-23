@@ -3,8 +3,10 @@ import DateFormatter from '../components/date-formatter'
 import CoverImage from '../components/cover-image'
 import PostTitle from '../components/post-title'
 import Avatar from '../components/avatar'
+import Tag from '../components/tag'
 
-export default function PostHeader({ title, coverImage, date, author }) {
+
+export default function PostHeader({ title, coverImage, date, author, tags }) {
   return (
     <>
       <div className="mb-1 -mx-5 border-b-4  border-color-basic-900 rounded justify-center items-center">
@@ -14,13 +16,19 @@ export default function PostHeader({ title, coverImage, date, author }) {
             <CoverImage title={title} src={coverImage} height={620} width={1240} />
           </div>
         }
-
         <div className="max-w-2xl mx-auto items-center">
-          <PostTitle>{title}</PostTitle>       
-          <div className="mb-6 text-lg">
+          <PostTitle>{title}</PostTitle>
+          <div className="text-lg">
             <DateFormatter dateString={date} />
           </div>
-          <Avatar name={author.name} picture={author.profile_image}/>
+          <div className="flex flex-row items-center justify-between ">
+          <Avatar name={author.name} picture={author.profile_image} />
+          {tags.map((tag) => (
+            <Tag tag={tag.name}/>
+          ))}
+            
+          </div>
+
         </div>
       </div>
     </>
