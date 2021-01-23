@@ -5,7 +5,6 @@ import PostTitle from '../components/post-title'
 import Avatar from '../components/avatar'
 import Tag from '../components/tag'
 
-
 export default function PostHeader({ title, coverImage, date, author, tags }) {
   return (
     <>
