@@ -21,11 +21,14 @@ export default function PostHeader({ title, coverImage, date, author, tags }) {
             <DateFormatter dateString={date} />
           </div>
           <div className="flex flex-row items-center justify-between ">
-          <Avatar name={author.name} picture={author.profile_image} />
-          {tags.map((tag) => (
-            <Tag tag={tag.name}/>
-          ))}
-            
+            <Avatar name={author.name} picture={author.profile_image} />
+            <span >
+              {tags.map((tag) => (
+                <Tag tag={tag.name} />
+              ))}
+
+            </span>
+
           </div>
 
         </div>
