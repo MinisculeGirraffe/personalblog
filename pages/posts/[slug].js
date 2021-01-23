@@ -51,7 +51,6 @@ export default function Post({ post, morePosts, preview }) {
 // In turn passing it to the posts.read() to query the Ghost Content API
 export async function getStaticProps(context) {
   const post = await getSinglePost(context.params.slug)
-  console.log(post)
   if (!post) {
     return {
       notFound: true,
