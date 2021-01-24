@@ -16,11 +16,10 @@ export default function PostPreview({
   tag,
 }) {
   return (
-    <div>
-      <div className=" pt-2 shadow-md mb-5 -mx-5 border border-color-basic-1100 border-color-basic-900 rounded justify-center">
+    <div className='py-1'>
+      <div className=" pt-2 shadow-md -mx-5 border-b bg-color-basic-1000 rounded justify-center">
         <div>
           <h3 className="text-3xl leading-snug flex flex-row items-center justify-between px-2">
-
             <span className ='flex-col flex'>
             <Tag tag={tag}/>
               <Link as={`/posts/${slug}`} href="/posts/[slug]">

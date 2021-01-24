@@ -8,7 +8,7 @@ import Tag from '../components/tag'
 export default function PostHeader({ title, coverImage, date, author, tags }) {
   return (
     <>
-      <div className=" mb-1 border-b-4 border-color-basic-900 rounded justify-between">
+      <div className=" mb-1 border-b-4  rounded justify-between">
 
         {coverImage &&
           <div className="mb-8 md:mb-16 sm:mx-0 ">

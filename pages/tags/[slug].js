@@ -8,11 +8,14 @@ import Layout from '../../components/layout'
 import Container from '../../components/container'
 import MoreStories from '../../components/more-stories'
 
-export default function Tag({ posts }) {
+export default function Tag({ posts, tag}) {
     const router = useRouter()
     const morePosts = posts
     return (
         <Layout>
+            <Container>
+                <p className=' text-xl'>Tag: {tag.name}</p>
+            </Container>
             <Container>
                 {router.isFallback ? (<PostTitle>Loading…</PostTitle>)
                     : morePosts.length > 0 && (<MoreStories posts={morePosts} />)}
@@ -25,8 +28,17 @@ export default function Tag({ posts }) {
 
 export async function getStaticProps(context) {
     const taggedPosts = await getPostsByTag(context.params.slug)
+    const tag = await getSingleTag(context.params.slug)
+    if (!taggedPosts) {
+        return {
+          notFound: true,
+        }
+      }
     console.log(taggedPosts)
-    return { props: { posts: taggedPosts } }
+    return { props: { 
+        posts: taggedPosts,
+        tag: tag
+     } }
 }
 export async function getStaticPaths() {
     const tags = await getTags()

@@ -15,9 +15,9 @@ export default function Layout({ preview, children }) {
   return (
     <>
       <Meta />
-      <div className=" flex  min-h-screen bg-color-basic-1100 text-color-basic-200 ">
+      <div className=" flex  min-h-screen bg-color-basic-1100 text-color-basic-100 text-opacity-80 ">
         <Intro />
-        <div className='flex-1  w-screen'>
+        <div className='flex-1 mt-20 w-screen'>
           <main>{children}</main>
         </div>
         
