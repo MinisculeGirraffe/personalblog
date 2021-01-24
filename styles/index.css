@@ -23,14 +23,18 @@ li {
     @apply rounded
 }
 
-h1 {
+.postBody a {
+    @apply text-color-info-600 hover:underline;
+}
+
+.postBody h1 {
     @apply text-3xl font-bold;
 }
 
-h2 {
+.postBody h2 {
     @apply text-2xl font-bold;
 }
 
-h3{
+.postBody h3{
     @apply text-xl font-bold;
 }
