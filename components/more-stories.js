@@ -14,7 +14,7 @@ export default function MoreStories({ posts }) {
               excerpt={post.excerpt}
               readingTime={post.reading_time}
               author={post.primary_author}
-              tag={post.primary_tag}
+              tag={post.tags}
             />
           </Container>
         ))}
