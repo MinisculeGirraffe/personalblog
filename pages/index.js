@@ -4,7 +4,7 @@ import MoreStories from '../components/more-stories'
 import Layout from '../components/layout'
 import {getPosts} from '../lib/posts'
 import Head from 'next/head'
-import { CMS_NAME } from '../lib/constants'
+
 
 export default function Index({ allPosts }) {
 

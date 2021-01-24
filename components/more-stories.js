@@ -13,7 +13,7 @@ export default function MoreStories({ posts }) {
             excerpt={post.excerpt}
             readingTime={post.reading_time}
             author={post.primary_author}
-            tag={post.primary_tag.name}
+            tag={post.primary_tag}
           />
         ))}
       </div>

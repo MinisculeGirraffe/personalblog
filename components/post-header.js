@@ -24,7 +24,7 @@ export default function PostHeader({ title, coverImage, date, author, tags }) {
             <Avatar name={author.name} picture={author.profile_image} />
             <span >
               {tags.map((tag) => (
-                <Tag tag={tag.name} />
+                <Tag tag={tag} />
               ))}
 
             </span>
