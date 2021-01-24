@@ -38,3 +38,22 @@ li {
 .postBody h3{
     @apply text-xl font-bold;
 }
+.postBody code:not([class]) {
+    @apply rounded;
+    color: #ABB2BF;
+    background: #282c34;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
