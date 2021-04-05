@@ -17,7 +17,7 @@ export default function Layout({ preview, children }) {
       <Meta />
       <div className=" flex min-h-full bg-color-basic-1100 text-color-basic-100 text-opacity-80 ">
         <Intro />
-        <div className='flex-1 flex-wrap mt-20 w-screen'>
+        <div className='flex-1 flex-wrap min-h-screen mt-20 w-screen'>
           <main>{children}</main>
         </div>
         
