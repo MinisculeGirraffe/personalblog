@@ -8,7 +8,7 @@ export default function Avatar({ name, picture }) {
                 <Image
                     loading="lazy"
                     src={picture}
-                    className="w-10 h-10 rounded-sm mr-1 z-0"
+                    className="w-10 h-10 rounded-sm mr-1 z-1"
                     width="32"
                     height="32"
                     alt={name} />
