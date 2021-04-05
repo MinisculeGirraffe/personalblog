@@ -1,5 +1,8 @@
 module.exports = {
   images: {
-    domains: ['crm.daniel.nor.red'],
+    domains: ['pwsh.rest'],
+  },
+  future: {
+    webpack5: true,
   },
 }

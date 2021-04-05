@@ -16,12 +16,12 @@ export default function PostPreview({
   tag,
 }) {
   return (
-    <div className='py-1'>
+    <div className=' py-1'>
       <div className=" pt-2 shadow-md -mx-5 border-b bg-color-basic-1000 rounded justify-center">
         <div>
           <h3 className="text-3xl leading-snug flex flex-row items-center justify-between px-2">
-            <span className='flex-col flex'>
-              <div className="flex-row inline-flex">
+            <span className='flex-col '>
+              <div className="">
                 <Tag tag={tag} />
               </div>
               <Link as={`/posts/${slug}`} href="/posts/[slug]">
@@ -39,10 +39,13 @@ export default function PostPreview({
           </h3>
         </div>
       </div>
+      <span className>
       {excerpt &&
-        <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+        <p className=" break-all text-lg leading-relaxed mb-4">{excerpt}</p>
       }
+            </span>
     </div>
+
+
   )
 }
-``

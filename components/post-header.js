@@ -22,7 +22,7 @@ export default function PostHeader({ title, coverImage, date, author, tags }) {
           </div>
           <div className="flex flex-row items-center justify-between ">
             <Avatar name={author.name} picture={author.profile_image} />
-            <span >
+            <span className=''>
               <Tag tag={tags}/>
             </span>
 

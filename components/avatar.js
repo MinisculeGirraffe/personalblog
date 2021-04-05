@@ -9,8 +9,8 @@ export default function Avatar({ name, picture }) {
                     loading="lazy"
                     src={picture}
                     className="w-10 h-10 rounded-sm mr-1 z-0"
-                    width="64"
-                    height="64"
+                    width="32"
+                    height="32"
                     alt={name} />
                     :
                 <HeaderIcon icon={['fas','user']}/>
