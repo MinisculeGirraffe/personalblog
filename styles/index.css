@@ -30,6 +30,9 @@ li {
 .postBody h1 {
     @apply text-3xl font-bold;
 }
+.postBody  p{
+    @apply mt-4
+}
 
 .postBody h2 {
     @apply text-2xl font-bold;

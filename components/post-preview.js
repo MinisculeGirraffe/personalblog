@@ -2,12 +2,11 @@
 import DateFormatter from '../components/date-formatter'
 import Tag from '../components/tag'
 import Avatar from '../components/avatar'
-import CoverImage from './cover-image'
+
 import Link from 'next/link'
 
 export default function PostPreview({
   title,
-  coverImage,
   date,
   excerpt,
   author,
@@ -35,7 +34,6 @@ export default function PostPreview({
                 <Avatar name={author.name} picture={author.profile_image} />
               </div>
             }
-
           </h3>
         </div>
       </div>
