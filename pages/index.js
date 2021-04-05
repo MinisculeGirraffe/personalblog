@@ -15,8 +15,7 @@ export default function Index({ allPosts }) {
         <Head>
           <title>Daniel's Blog</title>
         </Head>
-        
-        <Container>
+        <Container >
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
 
