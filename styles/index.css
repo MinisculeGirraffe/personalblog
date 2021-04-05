@@ -14,10 +14,10 @@
 
 /* Your own custom utilities */
 .postBody ul {
-    @apply list-disc list-inside pl-4
+    @apply list-disc list-inside pl-4;
 }
 .language-powershell {
-    @apply rounded
+    @apply rounded;
 }
 
 .postBody a {
@@ -25,18 +25,18 @@
 }
 
 .postBody h1 {
-    @apply text-3xl font-bold;
+    @apply text-3xl font-bold mt-4;
 }
 .postBody  p{
     @apply mt-4
 }
 
 .postBody h2 {
-    @apply text-2xl font-bold;
+    @apply text-2xl font-bold mt-2;
 }
 
 .postBody h3{
-    @apply text-xl font-bold;
+    @apply text-xl font-bold mt-2;
 }
 .postBody code:not([class]) {
     @apply rounded;
