@@ -1,6 +1,6 @@
 {
-  "name": "Next.js",
-  "short_name": "Next.js",
+  "name": "Daniel Norred's Blog",
+  "short_name": "blog",
   "icons": [
     {
       "src": "/favicons/android-chrome-192x192.png",

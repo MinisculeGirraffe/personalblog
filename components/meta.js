@@ -33,10 +33,9 @@ export default function Meta() {
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta
-        name="description"
-        content={`A statically generated blog example using Next.js and ${CMS_NAME}.`}
+        name="Daniel Norred's Blog"
+        content={`A Dumb PowerShell Blog`}
       />
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} />
     </Head>
   )
 }
