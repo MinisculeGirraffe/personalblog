@@ -22,11 +22,6 @@ export default function Intro() {
 
         <span className='flex-row flex items-center space-x-4'>
         <HeaderIcon
-          link='/archive'
-          text='Archive'
-          icon='archive'
-       />
-        <HeaderIcon
           link="https://twitter.com/minigirraffe"
           text='Twitter'
           icon={['fab','twitter']}
