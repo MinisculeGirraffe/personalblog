@@ -5,12 +5,17 @@ import Intro from '../components/intro'
 import prism from 'prismjs'
 import "prismjs/components/prism-jsx.min.js";
 import "prismjs/components/prism-powershell.min.js"
-
+import {initGA, logPageView} from '../lib/analytics'
 import { useEffect } from 'react'
 
 export default function Layout({ preview, children }) {
   useEffect(() => {
     Prism.highlightAll();
+    if (!window.GA_INITIALIZED) {
+      initGA()
+      window.GA_INITIALIZED = true
+    }
+    logPageView()
   }, []);
   return (
     <>
