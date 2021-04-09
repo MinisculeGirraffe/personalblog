@@ -8,7 +8,7 @@ import Layout from '../../components/layout'
 import Container from '../../components/container'
 import MoreStories from '../../components/more-stories'
 
-export default function Tag({ posts, tag}) {
+export default function Tag({ posts, tag }) {
     const router = useRouter()
     const morePosts = posts
     return (
@@ -31,14 +31,15 @@ export async function getStaticProps(context) {
     const tag = await getSingleTag(context.params.slug)
     if (!taggedPosts) {
         return {
-          notFound: true,
+            notFound: true,
         }
-      }
-    console.log(taggedPosts)
-    return { props: { 
-        posts: taggedPosts,
-        tag: tag
-     } }
+    }
+    return {
+        props: {
+            posts: taggedPosts,
+            tag: tag
+        }
+    }
 }
 export async function getStaticPaths() {
     const tags = await getTags()
