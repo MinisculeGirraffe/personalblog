@@ -10,11 +10,6 @@ import { useEffect } from 'react'
 export default function Layout({ preview, children }) {
   useEffect(() => {
     Prism.highlightAll();
-    if (!window.GA_INITIALIZED) {
-      initGA()
-      window.GA_INITIALIZED = true
-    }
-    logPageView()
   }, []);
   return (
     <>
