@@ -17,15 +17,9 @@ export default function Intro() {
               </h4>
             </section>
           </a>
-
         </Link>
 
         <span className='flex-row flex items-center space-x-4'>
-        <HeaderIcon
-          link="https://twitter.com/minigirraffe"
-          text='Twitter'
-          icon={['fab','twitter']}
-        />
         <HeaderIcon
           link='https://github.com/MinisculeGirraffe'
           text='Github'
